@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Maternidade ADS</string>
+    <string name="mae">Mãe</string>
+    <string name="medico">Médico</string>
+    <string name="bebe">Bebê</string>
+    <string name="listar_medicos">Listar Médicos</string>
+    <string name="gerenciar_medicos">Gerenciar Médicos</string>
+    <string name="listar">Listar</string>
+    <string name="adicionar">Adicionar</string>
+</resources>
