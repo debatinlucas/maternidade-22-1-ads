@@ -6,14 +6,18 @@
     <string name="medico">Médico</string>
     <string name="listar_medicos">Listar Médicos</string>
     <string name="gerenciar_medicos">Gerenciar Médicos</string>
+    <string name="excluir_medico_mensagem">Deseja excluir o médico?</string>
 
     <string name="listar">Listar</string>
     <string name="adicionar">Adicionar</string>
     <string name="editar">Editar</string>
     <string name="salvar">Salvar</string>
     <string name="excluir">Excluir</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
 
     <string name="nome">Nome</string>
     <string name="especialidade">Especialidade</string>
     <string name="celular">Celular</string>
+
 </resources>
