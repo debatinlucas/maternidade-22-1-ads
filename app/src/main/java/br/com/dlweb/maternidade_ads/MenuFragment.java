@@ -38,13 +38,13 @@ public class MenuFragment extends Fragment {
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_mae:
-                Toast.makeText(getActivity(), "Menu Mãe", Toast.LENGTH_LONG).show();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new br.com.dlweb.maternidade_ads.mae.MainFragment()).commit();
                 break;
             case R.id.menu_medico:
-                Toast.makeText(getActivity(), "Menu Médico", Toast.LENGTH_LONG).show();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new br.com.dlweb.maternidade_ads.medico.MainFragment()).commit();
                 break;
             case R.id.menu_bebe:
-                Toast.makeText(getActivity(), "Menu Bebê", Toast.LENGTH_LONG).show();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new br.com.dlweb.maternidade_ads.bebe.MainFragment()).commit();
                 break;
         }
         return super.onOptionsItemSelected(item);

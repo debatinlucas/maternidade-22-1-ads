@@ -1,12 +1,20 @@
 <resources>
     <string name="app_name">Maternidade ADS</string>
-    <string name="mae">Mãe</string>
-    <string name="bebe">Bebê</string>
 
     <string name="medico">Médico</string>
     <string name="listar_medicos">Listar Médicos</string>
     <string name="gerenciar_medicos">Gerenciar Médicos</string>
     <string name="excluir_medico_mensagem">Deseja excluir o médico?</string>
+	
+    <string name="bebe">Bebê</string>
+    <string name="listar_bebes">Listar Bebês</string>
+    <string name="gerenciar_bebes">Gerenciar Bebês</string>
+    <string name="dialog_excluir_bebe">Deseja realmente excluir o bebê?</string>
+	
+    <string name="mae">Mãe</string>
+    <string name="listar_maes">Listar Mães</string>
+    <string name="gerenciar_maes">Gerenciar Mães</string>
+    <string name="dialog_excluir_mae">Deseja realmente excluir a mãe?</string>
 
     <string name="listar">Listar</string>
     <string name="adicionar">Adicionar</string>
@@ -15,9 +23,21 @@
     <string name="excluir">Excluir</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
-
-    <string name="nome">Nome</string>
-    <string name="especialidade">Especialidade</string>
-    <string name="celular">Celular</string>
+	
+	<string name="cep">CEP*</string>
+    <string name="nome">Nome*</string>
+    <string name="logradouro">Logradouro*</string>
+    <string name="numero">Número*</string>
+    <string name="bairro">Bairro*</string>
+    <string name="cidade">Cidade*</string>
+    <string name="telefone_fixo">Telefone fixo</string>
+    <string name="telefone_celular">Telefone celular*</string>
+    <string name="telefone_comercial">Telefone comercial</string>
+    <string name="data_nascimento">Data Nascimento*</string>
+    <string name="especialidade">Especialidade*</string>
+    <string name="selecione_a_mae">Selecione a Mãe*</string>
+    <string name="selecione_o_medico">Selecione o Médico*</string>
+    <string name="peso">Peso*</string>
+    <string name="altura">Altura*</string>
 
 </resources>

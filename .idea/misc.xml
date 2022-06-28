@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Workspaces/prog-mobile/Android Studio/2022-1/Maternidade_ADS/app/src/main/res/layout/bebe_fragment_editar.xml" value="0.18489583333333334" />
+        <entry key="..\:/Workspaces/prog-mobile/Android Studio/2022-1/Maternidade_ADS/app/src/main/res/layout/bebe_fragment_listar.xml" value="0.18541666666666667" />
+        <entry key="..\:/Workspaces/prog-mobile/Android Studio/2022-1/Maternidade_ADS/app/src/main/res/layout/mae_fragment_editar.xml" value="0.18489583333333334" />
+        <entry key="..\:/Workspaces/prog-mobile/Android Studio/2022-1/Maternidade_ADS/app/src/main/res/layout/mae_fragment_listar.xml" value="0.18541666666666667" />
+        <entry key="..\:/Workspaces/prog-mobile/Android Studio/2022-1/Maternidade_ADS/app/src/main/res/layout/medico_fragment_editar.xml" value="0.18697916666666667" />
+        <entry key="..\:/Workspaces/prog-mobile/Android Studio/2022-1/Maternidade_ADS/app/src/main/res/layout/medico_fragment_listar.xml" value="0.18541666666666667" />
         <entry key="..\:/Workspaces/prog-mobile/Android Studio/Maternidade_ADS/app/src/main/res/layout/activity_main.xml" value="0.1757852077001013" />
         <entry key="..\:/Workspaces/prog-mobile/Android Studio/Maternidade_ADS/app/src/main/res/layout/fragment_menu.xml" value="0.25271739130434784" />
         <entry key="..\:/Workspaces/prog-mobile/Android Studio/Maternidade_ADS/app/src/main/res/layout/medico_fragment_adicionar.xml" value="0.25181159420289856" />
