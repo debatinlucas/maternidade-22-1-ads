@@ -15,6 +15,8 @@ import java.util.concurrent.ExecutionException;
 
 import br.com.dlweb.maternidade_ads.R;
 import br.com.dlweb.maternidade_ads.database.DatabaseHelper;
+import br.com.dlweb.maternidade_ads.webservice.DadosEndereco;
+import br.com.dlweb.maternidade_ads.webservice.RetornarEnderecoPeloCep;
 
 public class AdicionarFragment extends Fragment {
 
@@ -53,6 +55,24 @@ public class AdicionarFragment extends Fragment {
         etCelular = v.findViewById(R.id.editTextCelularMae);
         etComercial = v.findViewById(R.id.editTextComercialMae);
         etDataNascimento = v.findViewById(R.id.editTextDataNascimentoMae);
+
+        etCep.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    try {
+                        DadosEndereco dadosEndereco = new RetornarEnderecoPeloCep(etCep.getText().toString()).execute().get();
+                        etLogradouro.setText(dadosEndereco.getLogradouro());
+                        etBairro.setText(dadosEndereco.getBairro());
+                        etCidade.setText(dadosEndereco.getLocalidade());
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
 
         Button btnAdicionar = v.findViewById(R.id.buttonAdicionarMae);
 

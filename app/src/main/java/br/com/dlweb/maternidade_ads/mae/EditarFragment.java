@@ -17,6 +17,8 @@ import java.util.concurrent.ExecutionException;
 
 import br.com.dlweb.maternidade_ads.R;
 import br.com.dlweb.maternidade_ads.database.DatabaseHelper;
+import br.com.dlweb.maternidade_ads.webservice.DadosEndereco;
+import br.com.dlweb.maternidade_ads.webservice.RetornarEnderecoPeloCep;
 
 public class EditarFragment extends Fragment {
 
@@ -72,6 +74,26 @@ public class EditarFragment extends Fragment {
         etCelular.setText(m.getCelular());
         etComercial.setText(m.getComercial());
         etDataNascimento.setText(m.getData_nascimento());
+
+        etCep.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    if (m.getCep() != etCep.getText().toString()) {
+                        try {
+                            DadosEndereco dadosEndereco = new RetornarEnderecoPeloCep(etCep.getText().toString()).execute().get();
+                            etLogradouro.setText(dadosEndereco.getLogradouro());
+                            etBairro.setText(dadosEndereco.getBairro());
+                            etCidade.setText(dadosEndereco.getLocalidade());
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        });
 
         Button btnEditar = v.findViewById(R.id.buttonEditarMae);
 
