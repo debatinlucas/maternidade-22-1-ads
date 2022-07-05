@@ -9,4 +9,7 @@
     <item
         android:id="@+id/menu_bebe"
         android:title="@string/bebe"/>
+    <item
+        android:id="@+id/menu_compartilhar"
+        android:title="@string/compartilhar"/>
 </menu>

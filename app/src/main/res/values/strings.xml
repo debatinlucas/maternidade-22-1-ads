@@ -40,4 +40,6 @@
     <string name="peso">Peso*</string>
     <string name="altura">Altura*</string>
 
+    <string name="compartilhar">Compartilhar Texto</string>
+
 </resources>

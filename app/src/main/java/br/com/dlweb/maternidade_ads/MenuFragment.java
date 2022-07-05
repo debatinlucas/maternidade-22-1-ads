@@ -1,5 +1,6 @@
 package br.com.dlweb.maternidade_ads;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -45,6 +46,15 @@ public class MenuFragment extends Fragment {
                 break;
             case R.id.menu_bebe:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new br.com.dlweb.maternidade_ads.bebe.MainFragment()).commit();
+                break;
+            case R.id.menu_compartilhar:
+                // Adroid Sharesheet
+                Intent content = new Intent();
+                content.setAction(Intent.ACTION_SEND);
+                content.putExtra(Intent.EXTRA_TEXT, "Mensagem de teste!");
+                content.setType("text/plain");
+                Intent share = Intent.createChooser(content, null);
+                startActivity(share);
                 break;
         }
         return super.onOptionsItemSelected(item);
