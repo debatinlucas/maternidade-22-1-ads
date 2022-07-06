@@ -51,6 +51,10 @@ public class MenuFragment extends Fragment {
                 Intent camera = new Intent(getActivity(), CameraActivity.class);
                 startActivity(camera);
                 break;
+            case R.id.menu_sensor:
+                Intent sensor = new Intent(getActivity(), SensorActivity.class);
+                startActivity(sensor);
+                break;
             case R.id.menu_compartilhar:
                 // Adroid Sharesheet
                 Intent content = new Intent();

@@ -15,4 +15,7 @@
     <item
         android:id="@+id/menu_camera"
         android:title="@string/camera"/>
+    <item
+        android:id="@+id/menu_sensor"
+        android:title="@string/sensor"/>
 </menu>

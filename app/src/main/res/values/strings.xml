@@ -41,7 +41,11 @@
     <string name="altura">Altura*</string>
 
     <string name="compartilhar">Compartilhar Texto</string>
-    <string name="tirar_foto">Tirar Foto</string>
     <string name="camera">Câmera</string>
+    <string name="sensor">Sensor</string>
+    <string name="tirar_foto">Tirar Foto</string>
+    <string name="valor_x">Valor X:</string>
+    <string name="valor_y">Valor Y:</string>
+    <string name="valor_z">Valor Z:</string>
 
 </resources>
