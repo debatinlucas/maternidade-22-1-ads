@@ -42,5 +42,6 @@
 
     <string name="compartilhar">Compartilhar Texto</string>
     <string name="tirar_foto">Tirar Foto</string>
+    <string name="camera">Câmera</string>
 
 </resources>

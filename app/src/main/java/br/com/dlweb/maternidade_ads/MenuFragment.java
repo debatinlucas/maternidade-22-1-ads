@@ -47,6 +47,10 @@ public class MenuFragment extends Fragment {
             case R.id.menu_bebe:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new br.com.dlweb.maternidade_ads.bebe.MainFragment()).commit();
                 break;
+            case R.id.menu_camera:
+                Intent camera = new Intent(getActivity(), CameraActivity.class);
+                startActivity(camera);
+                break;
             case R.id.menu_compartilhar:
                 // Adroid Sharesheet
                 Intent content = new Intent();
