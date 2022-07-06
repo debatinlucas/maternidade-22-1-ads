@@ -5,12 +5,12 @@
     <string name="listar_medicos">Listar Médicos</string>
     <string name="gerenciar_medicos">Gerenciar Médicos</string>
     <string name="excluir_medico_mensagem">Deseja excluir o médico?</string>
-	
+
     <string name="bebe">Bebê</string>
     <string name="listar_bebes">Listar Bebês</string>
     <string name="gerenciar_bebes">Gerenciar Bebês</string>
     <string name="dialog_excluir_bebe">Deseja realmente excluir o bebê?</string>
-	
+
     <string name="mae">Mãe</string>
     <string name="listar_maes">Listar Mães</string>
     <string name="gerenciar_maes">Gerenciar Mães</string>
@@ -23,8 +23,8 @@
     <string name="excluir">Excluir</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
-	
-	<string name="cep">CEP*</string>
+
+    <string name="cep">CEP*</string>
     <string name="nome">Nome*</string>
     <string name="logradouro">Logradouro*</string>
     <string name="numero">Número*</string>
@@ -41,5 +41,6 @@
     <string name="altura">Altura*</string>
 
     <string name="compartilhar">Compartilhar Texto</string>
+    <string name="tirar_foto">Tirar Foto</string>
 
 </resources>
