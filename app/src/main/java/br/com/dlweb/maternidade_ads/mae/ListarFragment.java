@@ -34,13 +34,16 @@ public class ListarFragment extends Fragment {
         ListView lv = v.findViewById(R.id.listViewMaes);
         databaseHelper.getAllMae(getActivity(), lv);
 
+        // Para o item que foi clicado na lista
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                // Passa por parâmetro o valor do ID da mãe que foi clicado
                 TextView tvId = view.findViewById(R.id.textViewIdListMae);
                 Bundle b = new Bundle();
                 b.putInt("id", Integer.parseInt(tvId.getText().toString()));
 
+                // Substitui o valor atual do fragmento FrameMae (ListarFragment) para o novo valor (EditarFragment), passando o ID como parâmetro
                 EditarFragment editarFragment = new EditarFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 editarFragment.setArguments(b);

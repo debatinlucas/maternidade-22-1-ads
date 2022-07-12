@@ -37,6 +37,7 @@ public class MenuFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
+        // Verifica qual opção foi selecionada pelo usuário
         switch (item.getItemId()) {
             case R.id.menu_mae:
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new br.com.dlweb.maternidade_ads.mae.MainFragment()).commit();

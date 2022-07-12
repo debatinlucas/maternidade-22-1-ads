@@ -45,6 +45,7 @@ public class AdicionarFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.mae_fragment_adicionar, container, false);
 
+        // localiza os elementos da interface pelo ID (definidos no arquivo XML)
         etNome = v.findViewById(R.id.editTextNomeMae);
         etCep = v.findViewById(R.id.editTextCepMae);
         etLogradouro = v.findViewById(R.id.editTextLogradouroMae);
@@ -56,6 +57,7 @@ public class AdicionarFragment extends Fragment {
         etComercial = v.findViewById(R.id.editTextComercialMae);
         etDataNascimento = v.findViewById(R.id.editTextDataNascimentoMae);
 
+        // Quando o foco sair do campo do CEP, é executado o WS para recuperar os dados do CEP informado
         etCep.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
@@ -105,6 +107,7 @@ public class AdicionarFragment extends Fragment {
             Toast.makeText(getActivity(), "Por favor, informe a data de nascimento!", Toast.LENGTH_LONG).show();
         } else {
             DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
+            // Setar os valores para a classe Mãe
             Mae m = new Mae();
             m.setNome(etNome.getText().toString());
             m.setLogradouro(etLogradouro.getText().toString());
@@ -118,6 +121,7 @@ public class AdicionarFragment extends Fragment {
             m.setData_nascimento(etDataNascimento.getText().toString());
             databaseHelper.createMae(m);
             Toast.makeText(getActivity(), "Mãe salva!", Toast.LENGTH_LONG).show();
+            // Substitui o valor atual do fragmento FrameMae (AdicionarFragment) para o novo valor (ListarFragment)
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameMae, new ListarFragment()).commit();
         }
     }

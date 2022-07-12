@@ -48,11 +48,16 @@ public class EditarFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.mae_fragment_editar, container, false);
+
+        // Recupera o valor do ID enviado por parâmetro ao clicar no ListarFragment
         Bundle b = getArguments();
         int id_mae = b.getInt("id");
         databaseHelper = new DatabaseHelper(getActivity());
+
+        // Busca os dados da mãe do valor do ID
         m = databaseHelper.getByIdMae(id_mae);
 
+        // localiza os elementos da interface pelo ID (definidos no arquivo XML)
         etNome = v.findViewById(R.id.editTextNomeMae);
         etCep = v.findViewById(R.id.editTextCepMae);
         etLogradouro = v.findViewById(R.id.editTextLogradouroMae);
@@ -64,6 +69,7 @@ public class EditarFragment extends Fragment {
         etComercial = v.findViewById(R.id.editTextComercialMae);
         etDataNascimento = v.findViewById(R.id.editTextDataNascimentoMae);
 
+        // Seta nos campos da interface os valores do banco de dados do ID da mãe, recuperado via parâmetro
         etNome.setText(m.getNome());
         etCep.setText(m.getCep());
         etLogradouro.setText(m.getLogradouro());
@@ -75,6 +81,7 @@ public class EditarFragment extends Fragment {
         etComercial.setText(m.getComercial());
         etDataNascimento.setText(m.getData_nascimento());
 
+        // Quando o foco sair do campo do CEP, é executado o WS para recuperar os dados do CEP informado
         etCep.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
@@ -107,6 +114,7 @@ public class EditarFragment extends Fragment {
         Button btnExcluir = v.findViewById(R.id.buttonExcluirMae);
 
         btnExcluir.setOnClickListener(new View.OnClickListener() {
+            // Cria um alerta para o usuário informar Sim ou Não para a exclusão
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -149,6 +157,7 @@ public class EditarFragment extends Fragment {
             Toast.makeText(getActivity(), "Por favor, informe a data de nascimento!", Toast.LENGTH_LONG).show();
         } else {
             DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
+            // Setar os valores para a classe Mãe
             Mae m = new Mae();
             m.setId(id);
             m.setNome(etNome.getText().toString());
@@ -163,6 +172,7 @@ public class EditarFragment extends Fragment {
             m.setData_nascimento(etDataNascimento.getText().toString());
             databaseHelper.updateMae(m);
             Toast.makeText(getActivity(), "Mãe atualizada!", Toast.LENGTH_LONG).show();
+            // Substitui o valor atual do fragmento FrameMae (EditarFragment) para o novo valor (ListarFragment)
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameMae, new ListarFragment()).commit();
         }
     }
@@ -172,6 +182,7 @@ public class EditarFragment extends Fragment {
         m.setId(id);
         databaseHelper.deleteMae(m);
         Toast.makeText(getActivity(), "Mãe excluída!", Toast.LENGTH_LONG).show();
+        // Substitui o valor atual do fragmento FrameMae (EditarFragment) para o novo valor (ListarFragment)
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameMae, new ListarFragment()).commit();
     }
 }

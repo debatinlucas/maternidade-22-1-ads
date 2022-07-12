@@ -17,12 +17,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Defini qual será o conteúdo da interface (arquivo XML da pasta RES)
         setContentView(R.layout.activity_main);
 
+        // Se a instância for nula (primeiro acesso), carrega o fragment Main do médico
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_main, new MainFragment()).commit();
         }
 
+        // Envio de notificação
         Intent intent = new Intent(this, CameraActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
@@ -35,5 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 .setAutoCancel(true);
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
         notificationManagerCompat.notify(1, builder.build());
+        // Fim envio de notificação
     }
 }

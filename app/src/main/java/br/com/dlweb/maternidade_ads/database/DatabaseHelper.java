@@ -17,6 +17,7 @@ import br.com.dlweb.maternidade_ads.bebe.Bebe;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    // Definição das variáveis globais
     private static final String DATABASE_NAME = "maternidade";
     private static final String TABLE_MAE = "mae";
     private static final String TABLE_MEDICO = "medico";
@@ -53,10 +54,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DROP_TABLE_MEDICO = "DROP TABLE IF EXISTS " + TABLE_MEDICO;
     private static final String DROP_TABLE_BEBE = "DROP TABLE IF EXISTS " + TABLE_BEBE;
 
+    // Método construtor da classe, passando por parâmetro a versão do banco de dados
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
+    // Se ainda não existir o banco de dados, cria
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_MAE);
@@ -64,6 +67,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_BEBE);
     }
 
+    // Se já existir e a versão for diferente, atualiza.
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(DROP_TABLE_MAE);
@@ -211,14 +215,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void getAllMae (Context context, ListView lv) {
         SQLiteDatabase db = this.getReadableDatabase();
+        // Defini as colunas da consulta do SELECT
         String[] columns = {"_id", "nome", "celular"};
+        // Recupera os valores do banco de dados
         Cursor data = db.query(TABLE_MAE, columns, null, null, null, null, null);
+        // Campos do XML de destino para os valores do BD
         int[] to = {R.id.textViewIdListMae, R.id.textViewNomeListMae, R.id.textViewCelularListMae};
+        // Cria um adaptador utilizando o XML da pasta layout (mae_item_list_view) como padrão, para mostrar em cada item as informações presentes no banco de dados
         SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(context, R.layout.mae_item_list_view, data, columns, to, 0);
+        // Seta o adaptador no ListView. Por isso, não há retorno, é apenas modificado a instância do ListView recebido por parâmetro.
         lv.setAdapter(simpleCursorAdapter);
         db.close();
     }
 
+    // Recupera apenas os IDs e nomes das mães para o Spinner.
     public void getAllNameMae (ArrayList<Integer> listMaeId, ArrayList<String> listMaeName) {
         SQLiteDatabase db = this.getWritableDatabase();
         String[] columns = {"_id", "nome"};

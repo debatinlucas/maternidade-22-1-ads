@@ -26,6 +26,10 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.mae_fragment_main, container, false);
+
+        // Substitui o valor atual do fragmento FrameMae:
+        // Se for a primeira vez: para o valor Default (ListarFragment)
+        // Ao clicar nos botões, para as suas respectivas interfaces.
         if (savedInstanceState == null) {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameMae, new ListarFragment()).commit();
         }
